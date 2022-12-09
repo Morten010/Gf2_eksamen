@@ -16,6 +16,7 @@ const userEmailError = document.getElementById('email-error');
 const userNameError = document.getElementById('name-error');
 const userMessageError = document.getElementById('message-error');
 
+// on button add click eventlistener then call all validation funcitons
 createAccountButton.addEventListener('click', (e) => {
     e.preventDefault()
     validateName();
@@ -23,6 +24,7 @@ createAccountButton.addEventListener('click', (e) => {
     validateMessage();
 })
 
+// validation for name
 function validateName() {
     if(userName.value.length < 2){
         userName.classList.remove('good'); 
@@ -37,6 +39,7 @@ function validateName() {
     };
 };
 
+// validation for Email
 function validateEmail() {
     let regx = /^[0-9a-zA-Z!*\$]+@[0-9a-zA-Z]+.[0-9a-zA-Z]+$/;
     if(regx.test(userEmail.value)){
@@ -52,6 +55,9 @@ function validateEmail() {
     };
 
 };
+
+
+// validation for Message
 function validateMessage() {
     if(userMessage.value.length < 30) {
         userMessage.classList.remove('good'); 
